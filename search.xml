@@ -139,22 +139,6 @@
       </tags>
   </entry>
   <entry>
-    <title>TIOJ 1410. Comiket</title>
-    <url>/2018/12/22/%5BTIOJ%5D%201410.%20Comiket/</url>
-    <content><![CDATA[<p>題目來源：<a href="https://tioj.ck.tp.edu.tw/problems/1410">https://tioj.ck.tp.edu.tw/problems/1410</a><br>我的想法很直觀，就是用array儲存入和出的人(記得出的時間點也算，所以要加1)，然後掃過去紀錄時間軸的max值。</p>
-<p>PS:我最後發現我這樣寫不管是時間上還是空間上都很爛，所以我去看了幾位大神的寫法才發現這題可以用離散化或是用map揍掉 m(_ _)m</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> gcc optimize(o2)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long int </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios_base::sync_with_stdio(false)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TO cin.tie(NULL)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> str[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;TO;</span><br><span class="line">    <span class="keyword">int</span> range=<span class="number">0</span>,a,b,n,maxu,ans;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        ans=<span class="number">0</span>;maxu=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            str[a]++;</span><br><span class="line">            b+=<span class="number">1</span>;</span><br><span class="line">            str[b]--;</span><br><span class="line">            range=max(range,b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=range;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            maxu+=str[i];</span><br><span class="line">            ans=max(maxu,ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>演算法</category>
-      </categories>
-      <tags>
-        <tag>TIOJ</tag>
-        <tag>時間標記</tag>
-        <tag>前綴和</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利用Hexo架出第一個Blog</title>
     <url>/2020/10/11/%E5%88%A9%E7%94%A8Hexo%E6%9E%B6%E5%87%BA%E7%AC%AC%E4%B8%80%E5%80%8BBlog/</url>
     <content><![CDATA[<p>我之前都是用google的Blogger，如今我想架出自由度高的Blog（<del>好啦，就是想要很油很宅的Blog啦</del>），於是就被我<a href="https://theriseofdavid.github.io/">學長</a>推坑用Hexo。</p>
@@ -200,6 +184,22 @@
         <tag>2020</tag>
         <tag>Blog</tag>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TIOJ 1410. Comiket</title>
+    <url>/2018/12/22/%5BTIOJ%5D%201410.%20Comiket/</url>
+    <content><![CDATA[<p>題目來源：<a href="https://tioj.ck.tp.edu.tw/problems/1410">https://tioj.ck.tp.edu.tw/problems/1410</a><br>我的想法很直觀，就是用array儲存入和出的人(記得出的時間點也算，所以要加1)，然後掃過去紀錄時間軸的max值。</p>
+<p>PS:我最後發現我這樣寫不管是時間上還是空間上都很爛，所以我去看了幾位大神的寫法才發現這題可以用離散化或是用map揍掉 m(_ _)m</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> gcc optimize(o2)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long int </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios_base::sync_with_stdio(false)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TO cin.tie(NULL)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> str[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;TO;</span><br><span class="line">    <span class="keyword">int</span> range=<span class="number">0</span>,a,b,n,maxu,ans;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        ans=<span class="number">0</span>;maxu=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            str[a]++;</span><br><span class="line">            b+=<span class="number">1</span>;</span><br><span class="line">            str[b]--;</span><br><span class="line">            range=max(range,b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=range;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            maxu+=str[i];</span><br><span class="line">            ans=max(maxu,ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>演算法</category>
+      </categories>
+      <tags>
+        <tag>TIOJ</tag>
+        <tag>時間標記</tag>
+        <tag>前綴和</tag>
       </tags>
   </entry>
   <entry>
