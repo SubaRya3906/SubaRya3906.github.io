@@ -84,19 +84,6 @@
       </tags>
   </entry>
   <entry>
-    <title>TIOJ 1312 家族</title>
-    <url>/2018/12/19/TIOJ%201312%20%E5%AE%B6%E6%97%8F/</url>
-    <content><![CDATA[<p>雖然有一點煩(連續輸入我看漏了)，但只是裸裸的dsu題(模板+1/0)<br>據說我是題目連結(?  <a href="https://tioj.ck.tp.edu.tw/problems/1312">https://tioj.ck.tp.edu.tw/problems/1312</a></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> gcc optimize(<span class="meta-string">&quot;o2&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long int </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios_base::sync_with_stdio(false)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TO cin.tie(NULL)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">disjointset</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> mem[<span class="number">10005</span>],rank[<span class="number">10005</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=num;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            mem[i]=i;</span><br><span class="line">            rank[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mem[N]==N) <span class="keyword">return</span> N;</span><br><span class="line">        <span class="keyword">return</span> mem[N]=find(mem[N]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">same</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> find(a)==find(b);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!same(l,r))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(find(l)&lt;find(r)) swap(l,r);</span><br><span class="line">            mem[find(l)]=find(r);</span><br><span class="line">            rank[find(l)]+=find(r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;TO;</span><br><span class="line">    <span class="keyword">int</span> n,m,a,b,k;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">disjointset</span> <span class="title">dsu</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        dsu.init(n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            dsu.Union(a,b);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dsu.find(k) &lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>演算法</category>
-      </categories>
-      <tags>
-        <tag>TIOJ</tag>
-        <tag>並查集</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SOJ 41 大顆壽司</title>
     <url>/2018/08/16/%5BSOJ%5D%2041%20%E5%A4%A7%E9%A1%86%E5%A3%BD%E5%8F%B8/</url>
     <content><![CDATA[<p>題目URL:<a href="https://pc2.tfcis.org/dev/index.php/problem/view/41/">https://pc2.tfcis.org/dev/index.php/problem/view/41/</a><br>來到了清大的營隊，回顧一下最短路徑的裸題~<br>debug到死才發現我是垃圾~(因為我忘了把adj clear掉)</p>
@@ -111,6 +98,19 @@
       </tags>
   </entry>
   <entry>
+    <title>TIOJ 1312 家族</title>
+    <url>/2018/12/19/TIOJ%201312%20%E5%AE%B6%E6%97%8F/</url>
+    <content><![CDATA[<p>雖然有一點煩(連續輸入我看漏了)，但只是裸裸的dsu題(模板+1/0)<br>據說我是題目連結(?  <a href="https://tioj.ck.tp.edu.tw/problems/1312">https://tioj.ck.tp.edu.tw/problems/1312</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> gcc optimize(<span class="meta-string">&quot;o2&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long int </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios_base::sync_with_stdio(false)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TO cin.tie(NULL)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">disjointset</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> mem[<span class="number">10005</span>],rank[<span class="number">10005</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=num;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            mem[i]=i;</span><br><span class="line">            rank[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mem[N]==N) <span class="keyword">return</span> N;</span><br><span class="line">        <span class="keyword">return</span> mem[N]=find(mem[N]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">same</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> find(a)==find(b);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!same(l,r))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(find(l)&lt;find(r)) swap(l,r);</span><br><span class="line">            mem[find(l)]=find(r);</span><br><span class="line">            rank[find(l)]+=find(r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;TO;</span><br><span class="line">    <span class="keyword">int</span> n,m,a,b,k;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">disjointset</span> <span class="title">dsu</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        dsu.init(n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            dsu.Union(a,b);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dsu.find(k) &lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>演算法</category>
+      </categories>
+      <tags>
+        <tag>TIOJ</tag>
+        <tag>並查集</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SOJ 43 Lacy 路網</title>
     <url>/2018/08/16/%5BSOJ%5D%2043%20Lacy%20%E8%B7%AF%E7%B6%B2/</url>
     <content><![CDATA[<p>題目URL:<a href="https://pc2.tfcis.org/dev/index.php/problem/view/43/">https://pc2.tfcis.org/dev/index.php/problem/view/43/</a></p>
@@ -120,8 +120,8 @@
         <category>演算法</category>
       </categories>
       <tags>
-        <tag>並查集</tag>
         <tag>SOJ</tag>
+        <tag>並查集</tag>
         <tag>MST</tag>
       </tags>
   </entry>
@@ -163,6 +163,7 @@
 <h2 id="有關Diaspora的套用"><a href="#有關Diaspora的套用" class="headerlink" title="有關Diaspora的套用"></a>有關Diaspora的套用</h2><p>相信我，沒有什麼比看原作的流程更詳細的。</p>
 <p><a href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora連結</a></p>
 <h2 id="有關架網站的總過程"><a href="#有關架網站的總過程" class="headerlink" title="有關架網站的總過程"></a>有關架網站的總過程</h2><p>我大多是看這篇學的 -&gt; <a href="https://medium.com/@bebebobohaha/%E4%BD%BF%E7%94%A8-hexo-gitpage-%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA-blog-5c6ed52f23db">如何搭建個人 Blog 使用 Hexo + Gitpage</a></p>
+<p>如果想把 <code>favicon</code> 跟 <code>logo</code> 換成自己的話，我個人是用<a href="http://www.akuziti.com/">這個網站</a>生成自己想要的字體圖檔，然後再去 <code>themes/diaspora/source/css/diaspora.css</code> 把 <code>.image-logo</code> 的px改成自己所需的，但理論上 <code>favicon</code> 64px就行了，logo則是要去css檔裡修改（看你的logo多長啦）。</p>
 <p>還有，如果想在每一篇文章都放圖片的話，那就在<code>_posts</code>的<code>md</code>檔裡的<code>yaml</code>部份加上<code>cover: /img/....jpg</code></p>
 <p>舉例：</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">SOJ</span> <span class="number">43</span> <span class="string">Lacy</span> <span class="string">路網</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-08-16 15:46:00</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">演算法</span></span><br><span class="line"><span class="attr">welcome_cover:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/SOJ43.jpg</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">SOJ</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">MST</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">並查集</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
@@ -199,74 +200,6 @@
         <tag>TIOJ</tag>
         <tag>時間標記</tag>
         <tag>前綴和</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大學面試總心得</title>
-    <url>/2020/04/26/%E5%A4%A7%E5%AD%B8%E9%9D%A2%E8%A9%A6%E7%B8%BD%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<p><img src="https://i.imgur.com/IeHQ56h.jpg"></p>
-<h2 id="交大資工-APCS組-面試-amp-心得-4-23"><a href="#交大資工-APCS組-面試-amp-心得-4-23" class="headerlink" title="交大資工(APCS組)(面試&amp;心得)(4/23)"></a>交大資工(APCS組)(面試&amp;心得)(4/23)</h2><p>這是我的備審<br>連結：<a href="https://drive.google.com/open?id=1v4fw_F4DYsee9jLfdwLjFZ5MW5tFjUOv">https://drive.google.com/open?id=1v4fw_F4DYsee9jLfdwLjFZ5MW5tFjUOv</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
-<p>由左到右ABC三個教授，B是主面試官，也是競賽指導的教授，C聽說是資安的教授。<br>自介1分鐘，但我介紹1分半。</p>
-<hr>
-<p>教授A ：你接觸演算法時所運用的讀書方法。</p>
-<p>教授 B ：請說明在資訊之芽學習最深刻的演算法。</p>
-<p>教授 B ：請說具體的題目。</p>
-<p>教授 B ：那你覺得你不擅長的是什麼？</p>
-<p>我        ：是指哪個方面的？</p>
-<p>教授 B ：在資訊之芽時的演算法。</p>
-<p>教授 C ：請說明一下你發現app store 的付費漏洞。</p>
-<p>教授 B ：你是怎麼發現這個漏洞的？</p>
-<p>教授 B ：你有打Codeforces喔？目前如何？</p>
-<p>我         ：我綠人</p>
-<p>教授 B ：為什麼這樣？</p>
-<p>我         ：英文讀題比較慢，別人兩三分鐘一題，我要十幾分鐘</p>
-<p>教授B  ：可是題目很短（？</p>
-<p>我         ：我近期打的比賽是長的QAQ</p>
-<p>教授 A ：考APCS有先做準備嗎？</p>
-<p>回答完後七分鐘剛好到，被敲門了。</p>
-<p>教授B  ：好，按右邊的按鈕開門</p>
-<hr>
-<p>嘛……教授A的第一題我回答到腦袋空掉，突然想起陳威達學長說的『不要太緊張，不然面試時腦袋會空白，然後就會覺得越來越可怕』，此時輪到教授B時我就回歸正常，後面都回答得蠻順的，但是有一點尬聊，因為每次回答完一個問題，就會安靜個十幾秒(因為教授們在翻備審找題目問我，面試後聽說其他人也有)。面完試後跟吳邦寧、韋詠祥(Sean)等人聊天吃飯。有被問家裡住所的 ; 有被電的，我好想被電啊，被電都會入取 &gt;&lt;。然後等客運時遇到一位媽媽帶女兒來面試，聊一聊發現她也是來交大資工APCS的面試，聽她媽說她是唯一女的(? 為啥我去哪面試都會遇到女的OAO</p>
-<hr>
-<p>5/1附記：備取13 QAQ</p>
-<hr>
-<h2 id="臺師大-APCS組-面試-4-26"><a href="#臺師大-APCS組-面試-4-26" class="headerlink" title="臺師大 (APCS組)(面試)(4/26)"></a>臺師大 (APCS組)(面試)(4/26)</h2><p>這是我的備審<br>連結：<a href="https://drive.google.com/open?id=1B2Zi7ft8KcVla44UyAdwnZb82z55tMKt">https://drive.google.com/open?id=1B2Zi7ft8KcVla44UyAdwnZb82z55tMKt</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
-<p>因為臺師大校園內疫情的關係，所以改為不面試並調整分數的比例<br>(學測：45%，書審：25%，APCS：30%)</p>
-<p>至於面試的部分，以下我會放面試前我跟108學年有參加臺師大資工(APCS組)的學長姐請教的問題與回答。</p>
-<p>這是我給學長姐們的問題：<br>       你好，我是來自新北市時雨高中的蘇子權，懇請讓我借用你一些時間問一些關於臺師大APCS口試的準備指引。<br>       我希望能透過你了解一些面試時的「注意狀況與細節」和「問題導向」，因為我不確定口試時是會問關於「備審的內容」還是「演算法的問題」還是「單純像一些大學的資工乙組的聊聊天，用學測與在校成績評斷」（我認為應該不會是後者）。<br>       我們學校的老師一直說前面的大學注重的是課業（我的老師認為簡章上只是形式上寫寫的）。<br>       我的學測成績不好、數學也只有14、在校成績也不是很好，只有資訊競賽跟相關活動比較豐富（可是我資奧也不是打得很好），因此我想請教一下大致上口試的狀況，並且設法在口試時翻身。非常的謝謝你。</p>
-<p>其中一位學長給我這篇文章<br>連結：<a href="https://www.ptt.cc/bbs/SENIORHIGH/M.1524292907.A.DF8.html?fbclid=IwAR2cTlpIx0m50SVHnyCnOnFaBxv6_EgukLO_hyDMSyGHiGPBlwUXvDL1Ftc">https://www.ptt.cc/bbs/SENIORHIGH/M.1524292907.A.DF8.html?fbclid=IwAR2cTlpIx0m50SVHnyCnOnFaBxv6_EgukLO_hyDMSyGHiGPBlwUXvDL1Ftc</a></p>
-<p>其中一位學姊提供她的經驗<br>        我覺得照你說的你的條件是比我好的。<br>        我學測自然四科48 數學12 英文11 在校就普普 資訊競賽雖然看起來很多 但沒甚麼成績 資奧我那時候只有壓線拿到去考初選的資格而已。<br>        然後師大面試整體我覺得是比較輕鬆的 聽我同學說 一般組的還會有一些小測驗 類似海貍那種題目。<br>        但APCS完全沒有。<br>        那時候就是第一間進去有兩個教授 會問一些備審上面的問題然後叫你自介 但不是學術向問題 比較像是認識你那種。<br>        第二間就是跟教授聊聊天的感覺。</p>
-<hr>
-<p>5/7更新放榜結果：正取1</p>
-<hr>
-<h2 id="長庚資工-面試-4-18"><a href="#長庚資工-面試-4-18" class="headerlink" title="長庚資工(面試)(4/18)"></a>長庚資工(面試)(4/18)</h2><p>這是我的備審<br>連結 : <a href="https://drive.google.com/open?id=1rZ75w6ZeeY2U-0Ru0HKrMcKd3o95jggW">https://drive.google.com/open?id=1rZ75w6ZeeY2U-0Ru0HKrMcKd3o95jggW</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
-<p>面試時間大概10-12分鐘</p>
-<p>教授：請各位大概用3-4分鐘自介<br>以下依序為教授問的題目</p>
-<ol>
-<li>程式語言是什麼？如果沒有程式人類會變得怎麼樣？(這題是搶答)</li>
-<li>你學過哪些程式，如何1加到100？ (這題是教授想從左往右答)</li>
-<li>有什麼問題想問教授？(最後只有我問)<br> 我：請問有沒有icpc競賽和校內培訓</li>
-</ol>
-<p>結論：<br>        我跟三個女的一起面試，可能是因為這樣，所以被問到的題目非常簡單(沒有性別歧視的意味，只是去年都問很多思考性的問題，但今年卻都是問題庫的題目，所以這只是我單方面的結論。)</p>
-<hr>
-<p>5/1附記：正取8</p>
-<hr>
-<h2 id="長庚電機-面試-4-25"><a href="#長庚電機-面試-4-25" class="headerlink" title="長庚電機 (面試)(4/25)"></a>長庚電機 (面試)(4/25)</h2><p>這是我的備審：<br>連結：<a href="https://drive.google.com/open?id=11AltvoSak_cOq5NRt_CxkRz1GMh5Ry6g">https://drive.google.com/open?id=11AltvoSak_cOq5NRt_CxkRz1GMh5Ry6g</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
-<p>（沒有自介）<br>有三間教室（各一個教授，有點像跑班的概念）<br>第一間教室（聊天教室）<br>就是問很多個人狀況，先問一些基本的資料，反正就是想認識你；想了解你有沒有在打程式；想知道你有沒有考APCS；想知道你有沒有在玩資訊相關的社團，人很友善。<br>第二間教室（專業題一題）<br>我被問到「電話是如何運作，並如何將聲音與訊號互相轉換？」<br>第三間教室（考英文聽說讀這三個）</p>
-<ol>
-<li>先看投影片上三句英文10秒，再用15秒內的時間念投影片上三句英文。</li>
-<li>再來聽不到10秒的英文錄音檔。<br>（錄音檔聲音超模糊，但不用緊張，教授會一段一段跟你解釋）</li>
-<li>5題選一題文章，看15秒，然後翻譯整篇。</li>
-</ol>
-<hr>
-<p>5/1附記：正取25</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>面試</tag>
-        <tag>高中</tag>
       </tags>
   </entry>
   <entry>
@@ -360,6 +293,74 @@
       <tags>
         <tag>作業</tag>
         <tag>有趣的東西</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大學面試總心得</title>
+    <url>/2020/04/26/%E5%A4%A7%E5%AD%B8%E9%9D%A2%E8%A9%A6%E7%B8%BD%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<p><img src="https://i.imgur.com/IeHQ56h.jpg"></p>
+<h2 id="交大資工-APCS組-面試-amp-心得-4-23"><a href="#交大資工-APCS組-面試-amp-心得-4-23" class="headerlink" title="交大資工(APCS組)(面試&amp;心得)(4/23)"></a>交大資工(APCS組)(面試&amp;心得)(4/23)</h2><p>這是我的備審<br>連結：<a href="https://drive.google.com/open?id=1v4fw_F4DYsee9jLfdwLjFZ5MW5tFjUOv">https://drive.google.com/open?id=1v4fw_F4DYsee9jLfdwLjFZ5MW5tFjUOv</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
+<p>由左到右ABC三個教授，B是主面試官，也是競賽指導的教授，C聽說是資安的教授。<br>自介1分鐘，但我介紹1分半。</p>
+<hr>
+<p>教授A ：你接觸演算法時所運用的讀書方法。</p>
+<p>教授 B ：請說明在資訊之芽學習最深刻的演算法。</p>
+<p>教授 B ：請說具體的題目。</p>
+<p>教授 B ：那你覺得你不擅長的是什麼？</p>
+<p>我        ：是指哪個方面的？</p>
+<p>教授 B ：在資訊之芽時的演算法。</p>
+<p>教授 C ：請說明一下你發現app store 的付費漏洞。</p>
+<p>教授 B ：你是怎麼發現這個漏洞的？</p>
+<p>教授 B ：你有打Codeforces喔？目前如何？</p>
+<p>我         ：我綠人</p>
+<p>教授 B ：為什麼這樣？</p>
+<p>我         ：英文讀題比較慢，別人兩三分鐘一題，我要十幾分鐘</p>
+<p>教授B  ：可是題目很短（？</p>
+<p>我         ：我近期打的比賽是長的QAQ</p>
+<p>教授 A ：考APCS有先做準備嗎？</p>
+<p>回答完後七分鐘剛好到，被敲門了。</p>
+<p>教授B  ：好，按右邊的按鈕開門</p>
+<hr>
+<p>嘛……教授A的第一題我回答到腦袋空掉，突然想起陳威達學長說的『不要太緊張，不然面試時腦袋會空白，然後就會覺得越來越可怕』，此時輪到教授B時我就回歸正常，後面都回答得蠻順的，但是有一點尬聊，因為每次回答完一個問題，就會安靜個十幾秒(因為教授們在翻備審找題目問我，面試後聽說其他人也有)。面完試後跟吳邦寧、韋詠祥(Sean)等人聊天吃飯。有被問家裡住所的 ; 有被電的，我好想被電啊，被電都會入取 &gt;&lt;。然後等客運時遇到一位媽媽帶女兒來面試，聊一聊發現她也是來交大資工APCS的面試，聽她媽說她是唯一女的(? 為啥我去哪面試都會遇到女的OAO</p>
+<hr>
+<p>5/1附記：備取13 QAQ</p>
+<hr>
+<h2 id="臺師大-APCS組-面試-4-26"><a href="#臺師大-APCS組-面試-4-26" class="headerlink" title="臺師大 (APCS組)(面試)(4/26)"></a>臺師大 (APCS組)(面試)(4/26)</h2><p>這是我的備審<br>連結：<a href="https://drive.google.com/open?id=1B2Zi7ft8KcVla44UyAdwnZb82z55tMKt">https://drive.google.com/open?id=1B2Zi7ft8KcVla44UyAdwnZb82z55tMKt</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
+<p>因為臺師大校園內疫情的關係，所以改為不面試並調整分數的比例<br>(學測：45%，書審：25%，APCS：30%)</p>
+<p>至於面試的部分，以下我會放面試前我跟108學年有參加臺師大資工(APCS組)的學長姐請教的問題與回答。</p>
+<p>這是我給學長姐們的問題：<br>       你好，我是來自新北市時雨高中的蘇子權，懇請讓我借用你一些時間問一些關於臺師大APCS口試的準備指引。<br>       我希望能透過你了解一些面試時的「注意狀況與細節」和「問題導向」，因為我不確定口試時是會問關於「備審的內容」還是「演算法的問題」還是「單純像一些大學的資工乙組的聊聊天，用學測與在校成績評斷」（我認為應該不會是後者）。<br>       我們學校的老師一直說前面的大學注重的是課業（我的老師認為簡章上只是形式上寫寫的）。<br>       我的學測成績不好、數學也只有14、在校成績也不是很好，只有資訊競賽跟相關活動比較豐富（可是我資奧也不是打得很好），因此我想請教一下大致上口試的狀況，並且設法在口試時翻身。非常的謝謝你。</p>
+<p>其中一位學長給我這篇文章<br>連結：<a href="https://www.ptt.cc/bbs/SENIORHIGH/M.1524292907.A.DF8.html?fbclid=IwAR2cTlpIx0m50SVHnyCnOnFaBxv6_EgukLO_hyDMSyGHiGPBlwUXvDL1Ftc">https://www.ptt.cc/bbs/SENIORHIGH/M.1524292907.A.DF8.html?fbclid=IwAR2cTlpIx0m50SVHnyCnOnFaBxv6_EgukLO_hyDMSyGHiGPBlwUXvDL1Ftc</a></p>
+<p>其中一位學姊提供她的經驗<br>        我覺得照你說的你的條件是比我好的。<br>        我學測自然四科48 數學12 英文11 在校就普普 資訊競賽雖然看起來很多 但沒甚麼成績 資奧我那時候只有壓線拿到去考初選的資格而已。<br>        然後師大面試整體我覺得是比較輕鬆的 聽我同學說 一般組的還會有一些小測驗 類似海貍那種題目。<br>        但APCS完全沒有。<br>        那時候就是第一間進去有兩個教授 會問一些備審上面的問題然後叫你自介 但不是學術向問題 比較像是認識你那種。<br>        第二間就是跟教授聊聊天的感覺。</p>
+<hr>
+<p>5/7更新放榜結果：正取1</p>
+<hr>
+<h2 id="長庚資工-面試-4-18"><a href="#長庚資工-面試-4-18" class="headerlink" title="長庚資工(面試)(4/18)"></a>長庚資工(面試)(4/18)</h2><p>這是我的備審<br>連結 : <a href="https://drive.google.com/open?id=1rZ75w6ZeeY2U-0Ru0HKrMcKd3o95jggW">https://drive.google.com/open?id=1rZ75w6ZeeY2U-0Ru0HKrMcKd3o95jggW</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
+<p>面試時間大概10-12分鐘</p>
+<p>教授：請各位大概用3-4分鐘自介<br>以下依序為教授問的題目</p>
+<ol>
+<li>程式語言是什麼？如果沒有程式人類會變得怎麼樣？(這題是搶答)</li>
+<li>你學過哪些程式，如何1加到100？ (這題是教授想從左往右答)</li>
+<li>有什麼問題想問教授？(最後只有我問)<br> 我：請問有沒有icpc競賽和校內培訓</li>
+</ol>
+<p>結論：<br>        我跟三個女的一起面試，可能是因為這樣，所以被問到的題目非常簡單(沒有性別歧視的意味，只是去年都問很多思考性的問題，但今年卻都是問題庫的題目，所以這只是我單方面的結論。)</p>
+<hr>
+<p>5/1附記：正取8</p>
+<hr>
+<h2 id="長庚電機-面試-4-25"><a href="#長庚電機-面試-4-25" class="headerlink" title="長庚電機 (面試)(4/25)"></a>長庚電機 (面試)(4/25)</h2><p>這是我的備審：<br>連結：<a href="https://drive.google.com/open?id=11AltvoSak_cOq5NRt_CxkRz1GMh5Ry6g">https://drive.google.com/open?id=11AltvoSak_cOq5NRt_CxkRz1GMh5Ry6g</a><br>備註我的學測成績(國11 數14 英14 自11)</p>
+<p>（沒有自介）<br>有三間教室（各一個教授，有點像跑班的概念）<br>第一間教室（聊天教室）<br>就是問很多個人狀況，先問一些基本的資料，反正就是想認識你；想了解你有沒有在打程式；想知道你有沒有考APCS；想知道你有沒有在玩資訊相關的社團，人很友善。<br>第二間教室（專業題一題）<br>我被問到「電話是如何運作，並如何將聲音與訊號互相轉換？」<br>第三間教室（考英文聽說讀這三個）</p>
+<ol>
+<li>先看投影片上三句英文10秒，再用15秒內的時間念投影片上三句英文。</li>
+<li>再來聽不到10秒的英文錄音檔。<br>（錄音檔聲音超模糊，但不用緊張，教授會一段一段跟你解釋）</li>
+<li>5題選一題文章，看15秒，然後翻譯整篇。</li>
+</ol>
+<hr>
+<p>5/1附記：正取25</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>面試</tag>
+        <tag>高中</tag>
       </tags>
   </entry>
 </search>
