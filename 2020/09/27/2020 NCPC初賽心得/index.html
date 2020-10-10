@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw,en,default" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NCPC 初賽 2020心得 - SubaRya</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="[NCPC 初賽 2020心得]難得這次我有賽中把題目看完
+
+以下題敘PA : r=qx+py，給正整數r,p,q，求|x|+|y|最小 (r&amp;lt;pq &amp;amp; r&amp;lt;10^9 assum,"> 
+    <meta name="author" content="SubaRya"> 
+    <link rel="alternative" href="atom.xml" title="SubaRya" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">SubaRya</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暫停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">NCPC 初賽 2020心得</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="獲取二維碼" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">NCPC 初賽 2020心得</h1>
+        <div class="stuff">
+            <span>九月 27, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/NCPC/" rel="tag">NCPC</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="NCPC-初賽-2020心得"><a href="#NCPC-初賽-2020心得" class="headerlink" title="[NCPC 初賽 2020心得]"></a>[NCPC 初賽 2020心得]</h1><p>難得這次我有賽中把題目看完</p>
+<hr>
+<h2 id="以下題敘"><a href="#以下題敘" class="headerlink" title="以下題敘"></a>以下題敘</h2><p>PA : r=qx+py，給正整數r,p,q，求|x|+|y|最小 (r&lt;pq &amp; r&lt;10^9 assume that 1&lt;p,q&lt;10^9)</p>
+<p>PB : 奇數魔方陣。給定第一列數字，把整個大小n^2的魔方陣求出。(魔方陣：每行、列、主副對角線個別和相等) (n&lt;=5 &amp; n is odd)</p>
+<p>PC : 給一棵帶邊權的樹，n個節點，修改q次邊權Wij，求出每次修改後最遠的兩點。(n&lt;=1500 &amp; q&lt;=20 &amp;&amp; &lt;=10筆測資 &amp;&amp; W&lt;=10000)</p>
+<p>PD : 有一個以大寫字母組成長度&lt;10^4的字串，以星號(*)結尾。總共有兩次的變動，第一次為「將最後一個字母丟到第一個，重複n-1次」，第二次為「將原字串與n-1個字串以字典序排序」，然後依序取每個字串的最後一個字母。<br>現在給定一字串為「每個字串的最後一個字母」，請推出原字串為何。</p>
+<p>PE : 給定一個大小為n^2陣列L，n&lt;1000，L[i][j]表示i與j相鄰的距離(L[1][2]=1 L[1][3]=2 L[2][3]雖然可以間接走到，但沒有相鄰因此為無限大)，題序為全點對最短情況下modify一邊權後響多少點對被變更(變更使得維持全點對最短)(0&lt;邊權&lt;2^32)</p>
+<p>PF : 給m,n表示1~m中任意數量數字和=n，有全部列出，無則輸出-1 (m&lt;=n &amp; 8&lt;=n&lt;=30 &amp; 共10筆測資)</p>
+<p>PG : 給定d[0][0]，用下面圖片那串建一個(N-1)*(M-1)的table，給A,B,L取max(左上d[A][B]與右下d[A+L-1][B+L-1]的矩形範圍內相鄰差)</p>
+<h2 id="今日總過程"><a href="#今日總過程" class="headerlink" title="今日總過程"></a>今日總過程</h2><p><a target="_blank" rel="noopener" href="https://theriseofdavid.github.io/">江大衞</a> 昨天半夜來我家吃宵夜、改Codebook，還有互相打氣(?<br>隔天10點快半跟原齊、文元會合吃早(午)餐，然後買了電瓶-&gt;(茶)<br>進考場後說甚麼不能動電腦跟鍵盤，欸欸，都已經12:43了，剩17分鐘就要考了，說好的30分鐘測機呢？其他組去問都沒有用，然後我就上前去跟考官抗議，嗆到他一句回不出時他就摸摸鼻子去跟隔壁間考官說上台宣布開始測機(只剩15分鐘)。<br>宣布時有說到有提供印表機，但途中印表機卡紙(問題真多啊= = )<br>我快速的把全部題目看過，PF文元跟原齊正在解，我發現PD是前年新北市賽那題(「外星人的訊息」，解法我記得是BWT(Burrows–Wheeler Transform))，但我當年沒好好研究這算法(抓到，當年我喇部份分。子權你再不好好訂正啊!)，只好憑印象跟隊友說解法(因為事先說好我這次不會上機(怕我毒瘤code))。<br>快2小時過去，PF WA了兩次AC了，「中間時段」原齊也有把PD刻好了，<br>「中間時段」為-&gt;討論PD跟PC的解法，PC這題我跟文元說是樹直徑，但他說這題帶權重，我不好好的證明就放棄了這個念頭(如果我的實力好一點而且會在場上細心證明的話這題就AC了)。然後文元覺得是樹鏈剖分套BIT拉出每一條，雖然聽起來合理，但後來看Scoreboard得知很多人AC，發覺這題應該沒那麼毒瘤。<br>原齊把PD上傳後吃了WA，後來手動列出很多比測資都還是不知道哪裡假解<br>而PE跟PG我覺得很勞動而且PG的多次查詢範圍相臨差最大想不到優質的解法，所以都skip<br>PB跟PA也想不到好的解法，於是整場大燒機!!~~</p>
+<h3 id="比賽結束"><a href="#比賽結束" class="headerlink" title="(比賽結束)"></a>(比賽結束)</h3><hr>
+<h2 id="想法與心得"><a href="#想法與心得" class="headerlink" title="想法與心得"></a>想法與心得</h2><p>賽後我直接問 江文吉 PC怎麼AC的，他的隊友跟我說是樹直徑。<br>文元認為整個團隊還沒配合的很好，原齊跟我認為是實力不夠導致PA想不到是「擴展歐幾里得」(而且也不知道這是什麼)，還有PC沒法好好證明帶邊權樹直徑DFS兩次的正確性，後來文元很直白跟我說我都在吃老本、沒在動腦，看到題目就會翻以前解過哪些相似的並困在那思路中，更何況題目都會變化。<br>但我認為我還是得好好地刷題，刺激不同且新的思路還有把想法轉為code並穩定輸出，原齊則想往快速開題還有數論發展。</p>
+<h2 id="個人感想"><a href="#個人感想" class="headerlink" title="個人感想"></a>個人感想</h2><p>由於高中時期我幾乎是一人獨來獨往，組隊是用湊人頭的，很少有多次合作並賽後檢討的機會，更何況我都不知道我的「團隊配合」與「解題思路」有這麼多需要改進(真的直到文元指出我才知道)，這次多人正式賽真的學到了不少，希望兩位能繼續收留我QAQ</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看評論</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
