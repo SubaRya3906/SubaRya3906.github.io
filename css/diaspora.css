@@ -287,7 +287,7 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   #header {top:40px;}
   #vibrant svg {display:none;}
   #vibrant div {opacity:0.3;}
-  #container {padding-bottom:50px;}
+  #container {padding-bottom:50px;zzz}
   #post0 {bottom:60px;top:auto;width:70%;left:5%;}
   .menu {width:90%;margin:160px auto 0;}
   .menu li {font-size:16px;}
@@ -306,6 +306,8 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
 @media screen and (max-width:480px) {
   #post0 p:first-child {display:block;}
   #container:before {display:none;}
+  #mark {width:480px !important;height:270px !important}
+  #cover {position:absolute;max-width:none; height: 270px !important;width: 480px !important;left: 45px !important;top: 23px !important}
   #post0 h2 {text-align:left;margin:0 10px 0 0;}
   #post0 h2 + p {text-align:left;margin:10px 20px 0 0;color:#f2f2f2;font-size:14px;}
   #post0 h2 a {color:#fff;}
