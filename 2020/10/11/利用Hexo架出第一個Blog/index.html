@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw,en,default" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>利用Hexo架出第一個Blog - SubaRya</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="SubaRya,"> 
+    <meta name="description" content="我之前都是用google的Blogger，如今我想架出自由度高的Blog（好啦，就是想要很油很宅的Blog啦），於是就被我學長推坑用Hexo。
+關於Hexo
+美中不足之處我用的themes是Dias,"> 
+    <meta name="author" content="SubaRya"> 
+    <link rel="alternative" href="atom.xml" title="SubaRya" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">SubaRya</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://KutsunaSubaRya.github.io"></a>
+    <div title="播放/暫停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">利用Hexo架出第一個Blog</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="獲取二維碼" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">利用Hexo架出第一個Blog</h1>
+        <div class="stuff">
+            <span>十月 11, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/2020/" rel="tag">2020</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>我之前都是用google的Blogger，如今我想架出自由度高的Blog（<del>好啦，就是想要很油很宅的Blog啦</del>），於是就被我<a target="_blank" rel="noopener" href="https://theriseofdavid.github.io/">學長</a>推坑用Hexo。</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/">關於Hexo</a></p>
+<h2 id="美中不足之處"><a href="#美中不足之處" class="headerlink" title="美中不足之處"></a>美中不足之處</h2><p>我用的themes是Diaspora(<del>一個很適合放很多油圖的themes</del>)，但是有些小缺陷如下：</p>
+<ol>
+<li>Markdown的<strong>語法行號</strong>和<strong>粗體字</strong>無法好好的顯示。</li>
+<li>hitokoto(一言)需要手動去<code>diaspora.js</code>自行調整，首先要對javascript的string用法要熟悉。</li>
+<li>如果是繁體字使用者，需要去很多地方改成繁體字-&gt; <code>themes/diaspora/layout/</code></li>
+</ol>
+<h3 id="解決方法如下"><a href="#解決方法如下" class="headerlink" title="解決方法如下"></a>解決方法如下</h3><ol>
+<li><ul>
+<li><strong>行號不出現的問題</strong> -&gt; 到 <code>source/css/diaspora.css</code> 裡把 <code>.content .gutter &#123;display:none;&#125;</code> 改成 <code>.content .gutter &#123;display:table;&#125;</code></li>
+<li><strong>無法粗體字</strong>-&gt;<code>source/css/diaspora.css</code>裡把<code>.content strong &#123;font-weight:500;&#125;</code>刪掉。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>hitokoto</strong> -&gt; 直接去<code>source/js/diaspora.js</code>裡改他的string。</li>
+</ul>
+</li>
+</ol>
+<h2 id="有關Diaspora的套用"><a href="#有關Diaspora的套用" class="headerlink" title="有關Diaspora的套用"></a>有關Diaspora的套用</h2><p>相信我，沒有什麼比看原作的流程更詳細的。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora連結</a></p>
+<h2 id="有關架網站的總過程"><a href="#有關架網站的總過程" class="headerlink" title="有關架網站的總過程"></a>有關架網站的總過程</h2><p>我大多是看這篇學的 -&gt; <a target="_blank" rel="noopener" href="https://medium.com/@bebebobohaha/%E4%BD%BF%E7%94%A8-hexo-gitpage-%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA-blog-5c6ed52f23db">如何搭建個人 Blog 使用 Hexo + Gitpage</a></p>
+<p>如果想把 <code>favicon</code> 跟 <code>logo</code> 換成自己的話，我個人是用<a target="_blank" rel="noopener" href="http://www.akuziti.com/">這個網站</a>生成自己想要的字體圖檔，然後再去 <code>themes/diaspora/source/css/diaspora.css</code> 把 <code>.image-logo</code> 的px改成自己所需的，但理論上 <code>favicon</code> 64px就行了，logo則是要去css檔裡修改（看你的logo多長啦）。</p>
+<p>還有，如果想在每一篇文章都放圖片的話，那就在<code>_posts</code>的<code>md</code>檔裡的<code>yaml</code>部份加上<code>cover: /img/....jpg</code></p>
+<p>舉例：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">SOJ</span> <span class="number">43</span> <span class="string">Lacy</span> <span class="string">路網</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-08-16 15:46:00</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">演算法</span></span><br><span class="line"><span class="attr">welcome_cover:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/SOJ43.jpg</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">SOJ</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">MST</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">並查集</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>如果想要讓首頁圖片跟著分類一起片換的話（也就是當那篇文章是第一個時，以那一篇cover為當前封面）</p>
+<p>那就把<code>themes/_config.yml</code>裡的<code>welcome_cover: .../</code>給註記掉<code>#welcome_cover: .../</code></p>
+<p>另外，記得每個<code>md</code>的<code>yaml</code>的<code>title</code>部份，名字絕對不要有<code>[ ]</code>符號，不然會出錯。</p>
+<h2 id="如何將你的-Hexo-Github-Pages"><a href="#如何將你的-Hexo-Github-Pages" class="headerlink" title="如何將你的 Hexo + Github Pages"></a>如何將你的 Hexo + Github Pages</h2><p>我是看這篇的。</p>
+<p><a target="_blank" rel="noopener" href="https://ed521.github.io/2019/07/hexo-install/">使用 GitHub Pages + Hexo 來架設個人部落格</a></p>
+<p><strong>但切記：我犯了一個重大的錯誤，就是建repo時一定要<code>&lt;username&gt;.github.io</code>，我就是因為取錯repo的名字導致我的網站爛掉。</strong></p>
+<h2 id="當你要npm-install-hexo-deployer-git-save時吃了Warning"><a href="#當你要npm-install-hexo-deployer-git-save時吃了Warning" class="headerlink" title="當你要npm install hexo-deployer-git --save時吃了Warning"></a>當你要<code>npm install hexo-deployer-git --save</code>時吃了Warning</h2><p>這篇一定可以幫助到你。</p>
+<p><a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/682735/">為什麼npminstall的時候會顯示嚴重漏洞</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看評論</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-180925442-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
