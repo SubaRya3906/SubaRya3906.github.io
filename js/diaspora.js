@@ -44,7 +44,7 @@ var Diaspora = {
             document.title = state.t;
 
             if (state.u == Home) {
-                $('#preview').css('position', 'fixed');
+                $('#preview').css('position', 'static');
                 setTimeout(function() {
                     $('#preview').removeClass('show');
                     $('#container').show();
@@ -463,7 +463,7 @@ $(function() {
                 Diaspora.L(tag.attr('href'), function(data) {
                     var link = $(data).find('.more').attr('href');
                     if (link != undefined) {
-                        tag.attr('href', link).html('加載更多').data('status', 'loaded')
+                        tag.attr('href', link).html('顯示更多').data('status', 'loaded')
                         tag.data('page', parseInt(tag.data('page')) + 1)
                     } else {
                         $('#pager').remove()
@@ -474,7 +474,7 @@ $(function() {
                     Diaspora.loaded()
                     $('html,body').animate({ scrollTop: tempScrollTop + 400 }, 500);
                 }, function() {
-                    tag.html('加載更多').data('status', 'loaded')
+                    tag.html('顯示更多').data('status', 'loaded')
                 })
                 return false;
                 break;

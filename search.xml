@@ -177,20 +177,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SOJ 41 大顆壽司</title>
-    <url>/2018/08/16/%5BSOJ%5D%2041%20%E5%A4%A7%E9%A1%86%E5%A3%BD%E5%8F%B8/</url>
-    <content><![CDATA[<p>題目URL:<a href="https://pc2.tfcis.org/dev/index.php/problem/view/41/">https://pc2.tfcis.org/dev/index.php/problem/view/41/</a><br>來到了清大的營隊，回顧一下最短路徑的裸題~<br>debug到死才發現我是垃圾~(因為我忘了把adj clear掉)</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(<span class="meta-string">&quot;O2&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> weight first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> index second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios_base::sync_with_stdio(false)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TI cin.tie(NULL)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> edge=<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">2147483647</span>;</span><br><span class="line"><span class="keyword">int</span> vnum,dist[<span class="number">400005</span>];</span><br><span class="line"><span class="keyword">int</span> num,M,st,t,a,b,w;</span><br><span class="line"><span class="built_in">vector</span>&lt;edge&gt; adj[<span class="number">400005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; <span class="title">vis</span><span class="params">(vnum,<span class="literal">false</span>)</span></span>;</span><br><span class="line">    fill(dist,dist+vnum+<span class="number">5</span>,INF);</span><br><span class="line">    dist[s]=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">priority_queue</span>&lt;edge,<span class="built_in">vector</span>&lt;edge&gt;,greater&lt;edge&gt;&gt; pq;</span><br><span class="line">    pq.emplace(<span class="number">0</span>,s);</span><br><span class="line">    <span class="keyword">while</span>(!pq.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> u=pq.top().index;</span><br><span class="line">        pq.pop();</span><br><span class="line">        <span class="keyword">if</span>(vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">        vis[u]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> v:adj[u])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(dist[v.index] &gt; dist[u]+v.weight)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[v.index]=dist[u]+v.weight;</span><br><span class="line">                pq.emplace(dist[v.index],v.index);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//for(int i=1;i&lt;=vnum;i++)</span></span><br><span class="line">    <span class="comment">// cout &lt;&lt; &quot;dist[&quot; &lt;&lt; i  &lt;&lt; &quot;]&quot; &lt;&lt; dist[i] &lt;&lt;endl;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;TI;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;num;k++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; vnum &gt;&gt; M &gt;&gt; st &gt;&gt; t;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; w;</span><br><span class="line">            adj[a].emplace_back(w,b);<span class="comment">//a to b</span></span><br><span class="line">            adj[b].emplace_back(w,a);<span class="comment">//b to a</span></span><br><span class="line">        &#125;</span><br><span class="line">        dijkstra(st);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; dist[t] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=vnum;i++)</span><br><span class="line">            adj[i].clear();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>演算法</category>
-      </categories>
-      <tags>
-        <tag>SOJ</tag>
-        <tag>djijkstra</tag>
-        <tag>最短路徑</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SOJ 43 Lacy 路網</title>
     <url>/2018/08/16/%5BSOJ%5D%2043%20Lacy%20%E8%B7%AF%E7%B6%B2/</url>
     <content><![CDATA[<p>題目URL:<a href="https://pc2.tfcis.org/dev/index.php/problem/view/43/">https://pc2.tfcis.org/dev/index.php/problem/view/43/</a></p>
@@ -203,6 +189,20 @@
         <tag>並查集</tag>
         <tag>SOJ</tag>
         <tag>MST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SOJ 41 大顆壽司</title>
+    <url>/2018/08/16/%5BSOJ%5D%2041%20%E5%A4%A7%E9%A1%86%E5%A3%BD%E5%8F%B8/</url>
+    <content><![CDATA[<p>題目URL:<a href="https://pc2.tfcis.org/dev/index.php/problem/view/41/">https://pc2.tfcis.org/dev/index.php/problem/view/41/</a><br>來到了清大的營隊，回顧一下最短路徑的裸題~<br>debug到死才發現我是垃圾~(因為我忘了把adj clear掉)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(<span class="meta-string">&quot;O2&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> weight first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> index second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOS ios_base::sync_with_stdio(false)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TI cin.tie(NULL)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> edge=<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">2147483647</span>;</span><br><span class="line"><span class="keyword">int</span> vnum,dist[<span class="number">400005</span>];</span><br><span class="line"><span class="keyword">int</span> num,M,st,t,a,b,w;</span><br><span class="line"><span class="built_in">vector</span>&lt;edge&gt; adj[<span class="number">400005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; <span class="title">vis</span><span class="params">(vnum,<span class="literal">false</span>)</span></span>;</span><br><span class="line">    fill(dist,dist+vnum+<span class="number">5</span>,INF);</span><br><span class="line">    dist[s]=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">priority_queue</span>&lt;edge,<span class="built_in">vector</span>&lt;edge&gt;,greater&lt;edge&gt;&gt; pq;</span><br><span class="line">    pq.emplace(<span class="number">0</span>,s);</span><br><span class="line">    <span class="keyword">while</span>(!pq.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> u=pq.top().index;</span><br><span class="line">        pq.pop();</span><br><span class="line">        <span class="keyword">if</span>(vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">        vis[u]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> v:adj[u])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(dist[v.index] &gt; dist[u]+v.weight)</span><br><span class="line">            &#123;</span><br><span class="line">                dist[v.index]=dist[u]+v.weight;</span><br><span class="line">                pq.emplace(dist[v.index],v.index);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//for(int i=1;i&lt;=vnum;i++)</span></span><br><span class="line">    <span class="comment">// cout &lt;&lt; &quot;dist[&quot; &lt;&lt; i  &lt;&lt; &quot;]&quot; &lt;&lt; dist[i] &lt;&lt;endl;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IOS;TI;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;num;k++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; vnum &gt;&gt; M &gt;&gt; st &gt;&gt; t;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; w;</span><br><span class="line">            adj[a].emplace_back(w,b);<span class="comment">//a to b</span></span><br><span class="line">            adj[b].emplace_back(w,a);<span class="comment">//b to a</span></span><br><span class="line">        &#125;</span><br><span class="line">        dijkstra(st);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; dist[t] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=vnum;i++)</span><br><span class="line">            adj[i].clear();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>演算法</category>
+      </categories>
+      <tags>
+        <tag>SOJ</tag>
+        <tag>djijkstra</tag>
+        <tag>最短路徑</tag>
       </tags>
   </entry>
   <entry>
@@ -232,54 +232,6 @@
         <tag>TIOJ</tag>
         <tag>時間標記</tag>
         <tag>前綴和</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用Hexo架出第一個Blog</title>
-    <url>/2020/10/11/%E5%88%A9%E7%94%A8Hexo%E6%9E%B6%E5%87%BA%E7%AC%AC%E4%B8%80%E5%80%8BBlog/</url>
-    <content><![CDATA[<p>我之前都是用google的Blogger，如今我想架出自由度高的Blog（<del>好啦，就是想要很油很宅的Blog啦</del>），於是就被我<a href="https://theriseofdavid.github.io/">學長</a>推坑用Hexo。</p>
-<p><a href="https://hexo.io/zh-tw/">關於Hexo</a></p>
-<h2 id="美中不足之處"><a href="#美中不足之處" class="headerlink" title="美中不足之處"></a>美中不足之處</h2><p>我用的themes是Diaspora(<del>一個很適合放很多油圖的themes</del>)，但是有些小缺陷如下：</p>
-<ol>
-<li>Markdown的<strong>語法行號</strong>和<strong>粗體字</strong>無法好好的顯示。</li>
-<li>hitokoto(一言)需要手動去<code>diaspora.js</code>自行調整，首先要對javascript的string用法要熟悉。</li>
-<li>如果是繁體字使用者，需要去很多地方改成繁體字-&gt; <code>themes/diaspora/layout/</code></li>
-</ol>
-<h3 id="解決方法如下"><a href="#解決方法如下" class="headerlink" title="解決方法如下"></a>解決方法如下</h3><ol>
-<li><ul>
-<li><strong>行號不出現的問題</strong> -&gt; 到 <code>source/css/diaspora.css</code> 裡把 <code>.content .gutter &#123;display:none;&#125;</code> 改成 <code>.content .gutter &#123;display:table;&#125;</code></li>
-<li><strong>無法粗體字</strong>-&gt;<code>source/css/diaspora.css</code>裡把<code>.content strong &#123;font-weight:500;&#125;</code>刪掉。</li>
-</ul>
-</li>
-<li><ul>
-<li><strong>hitokoto</strong> -&gt; 直接去<code>source/js/diaspora.js</code>裡改他的string。</li>
-</ul>
-</li>
-</ol>
-<h2 id="有關Diaspora的套用"><a href="#有關Diaspora的套用" class="headerlink" title="有關Diaspora的套用"></a>有關Diaspora的套用</h2><p>相信我，沒有什麼比看原作的流程更詳細的。</p>
-<p><a href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora連結</a></p>
-<h2 id="有關架網站的總過程"><a href="#有關架網站的總過程" class="headerlink" title="有關架網站的總過程"></a>有關架網站的總過程</h2><p>我大多是看這篇學的 -&gt; <a href="https://medium.com/@bebebobohaha/%E4%BD%BF%E7%94%A8-hexo-gitpage-%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA-blog-5c6ed52f23db">如何搭建個人 Blog 使用 Hexo + Gitpage</a></p>
-<p>如果想把 <code>favicon</code> 跟 <code>logo</code> 換成自己的話，我個人是用<a href="http://www.akuziti.com/">這個網站</a>生成自己想要的字體圖檔，然後再去 <code>themes/diaspora/source/css/diaspora.css</code> 把 <code>.image-logo</code> 的px改成自己所需的，但理論上 <code>favicon</code> 64px就行了，logo則是要去css檔裡修改（看你的logo多長啦）。</p>
-<p>還有，如果想在每一篇文章都放圖片的話，那就在<code>_posts</code>的<code>md</code>檔裡的<code>yaml</code>部份加上<code>cover: /img/....jpg</code></p>
-<p>舉例：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">SOJ</span> <span class="number">43</span> <span class="string">Lacy</span> <span class="string">路網</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-08-16 15:46:00</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">演算法</span></span><br><span class="line"><span class="attr">welcome_cover:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/SOJ43.jpg</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">SOJ</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">MST</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">並查集</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-
-<p>如果想要讓首頁圖片跟著分類一起片換的話（也就是當那篇文章是第一個時，以那一篇cover為當前封面）</p>
-<p>那就把<code>themes/_config.yml</code>裡的<code>welcome_cover: .../</code>給註記掉<code>#welcome_cover: .../</code></p>
-<p>另外，記得每個<code>md</code>的<code>yaml</code>的<code>title</code>部份，名字絕對不要有<code>[ ]</code>符號，不然會出錯。</p>
-<h2 id="如何將你的-Hexo-Github-Pages"><a href="#如何將你的-Hexo-Github-Pages" class="headerlink" title="如何將你的 Hexo + Github Pages"></a>如何將你的 Hexo + Github Pages</h2><p>我是看這篇的。</p>
-<p><a href="https://ed521.github.io/2019/07/hexo-install/">使用 GitHub Pages + Hexo 來架設個人部落格</a></p>
-<p><strong>但切記：我犯了一個重大的錯誤，就是建repo時一定要<code>&lt;username&gt;.github.io</code>，我就是因為取錯repo的名字導致我的網站爛掉。</strong></p>
-<h2 id="當你要npm-install-hexo-deployer-git-save時吃了Warning"><a href="#當你要npm-install-hexo-deployer-git-save時吃了Warning" class="headerlink" title="當你要npm install hexo-deployer-git --save時吃了Warning"></a>當你要<code>npm install hexo-deployer-git --save</code>時吃了Warning</h2><p>這篇一定可以幫助到你。</p>
-<p><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/682735/">為什麼npminstall的時候會顯示嚴重漏洞</a></p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>2020</tag>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -348,6 +300,54 @@
       <tags>
         <tag>面試</tag>
         <tag>高中</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用Hexo架出第一個Blog</title>
+    <url>/2020/10/11/%E5%88%A9%E7%94%A8Hexo%E6%9E%B6%E5%87%BA%E7%AC%AC%E4%B8%80%E5%80%8BBlog/</url>
+    <content><![CDATA[<p>我之前都是用google的Blogger，如今我想架出自由度高的Blog（<del>好啦，就是想要很油很宅的Blog啦</del>），於是就被我<a href="https://theriseofdavid.github.io/">學長</a>推坑用Hexo。</p>
+<p><a href="https://hexo.io/zh-tw/">關於Hexo</a></p>
+<h2 id="美中不足之處"><a href="#美中不足之處" class="headerlink" title="美中不足之處"></a>美中不足之處</h2><p>我用的themes是Diaspora(<del>一個很適合放很多油圖的themes</del>)，但是有些小缺陷如下：</p>
+<ol>
+<li>Markdown的<strong>語法行號</strong>和<strong>粗體字</strong>無法好好的顯示。</li>
+<li>hitokoto(一言)需要手動去<code>diaspora.js</code>自行調整，首先要對javascript的string用法要熟悉。</li>
+<li>如果是繁體字使用者，需要去很多地方改成繁體字-&gt; <code>themes/diaspora/layout/</code></li>
+</ol>
+<h3 id="解決方法如下"><a href="#解決方法如下" class="headerlink" title="解決方法如下"></a>解決方法如下</h3><ol>
+<li><ul>
+<li><strong>行號不出現的問題</strong> -&gt; 到 <code>source/css/diaspora.css</code> 裡把 <code>.content .gutter &#123;display:none;&#125;</code> 改成 <code>.content .gutter &#123;display:table;&#125;</code></li>
+<li><strong>無法粗體字</strong>-&gt;<code>source/css/diaspora.css</code>裡把<code>.content strong &#123;font-weight:500;&#125;</code>刪掉。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>hitokoto</strong> -&gt; 直接去<code>source/js/diaspora.js</code>裡改他的string。</li>
+</ul>
+</li>
+</ol>
+<h2 id="有關Diaspora的套用"><a href="#有關Diaspora的套用" class="headerlink" title="有關Diaspora的套用"></a>有關Diaspora的套用</h2><p>相信我，沒有什麼比看原作的流程更詳細的。</p>
+<p><a href="https://github.com/Fechin/hexo-theme-diaspora">Diaspora連結</a></p>
+<h2 id="有關架網站的總過程"><a href="#有關架網站的總過程" class="headerlink" title="有關架網站的總過程"></a>有關架網站的總過程</h2><p>我大多是看這篇學的 -&gt; <a href="https://medium.com/@bebebobohaha/%E4%BD%BF%E7%94%A8-hexo-gitpage-%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA-blog-5c6ed52f23db">如何搭建個人 Blog 使用 Hexo + Gitpage</a></p>
+<p>如果想把 <code>favicon</code> 跟 <code>logo</code> 換成自己的話，我個人是用<a href="http://www.akuziti.com/">這個網站</a>生成自己想要的字體圖檔，然後再去 <code>themes/diaspora/source/css/diaspora.css</code> 把 <code>.image-logo</code> 的px改成自己所需的，但理論上 <code>favicon</code> 64px就行了，logo則是要去css檔裡修改（看你的logo多長啦）。</p>
+<p>還有，如果想在每一篇文章都放圖片的話，那就在<code>_posts</code>的<code>md</code>檔裡的<code>yaml</code>部份加上<code>cover: /img/....jpg</code></p>
+<p>舉例：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">SOJ</span> <span class="number">43</span> <span class="string">Lacy</span> <span class="string">路網</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018-08-16 15:46:00</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">演算法</span></span><br><span class="line"><span class="attr">welcome_cover:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/SOJ43.jpg</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">SOJ</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">MST</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">並查集</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>如果想要讓首頁圖片跟著分類一起片換的話（也就是當那篇文章是第一個時，以那一篇cover為當前封面）</p>
+<p>那就把<code>themes/_config.yml</code>裡的<code>welcome_cover: .../</code>給註記掉<code>#welcome_cover: .../</code></p>
+<p>另外，記得每個<code>md</code>的<code>yaml</code>的<code>title</code>部份，名字絕對不要有<code>[ ]</code>符號，不然會出錯。</p>
+<h2 id="如何將你的-Hexo-Github-Pages"><a href="#如何將你的-Hexo-Github-Pages" class="headerlink" title="如何將你的 Hexo + Github Pages"></a>如何將你的 Hexo + Github Pages</h2><p>我是看這篇的。</p>
+<p><a href="https://ed521.github.io/2019/07/hexo-install/">使用 GitHub Pages + Hexo 來架設個人部落格</a></p>
+<p><strong>但切記：我犯了一個重大的錯誤，就是建repo時一定要<code>&lt;username&gt;.github.io</code>，我就是因為取錯repo的名字導致我的網站爛掉。</strong></p>
+<h2 id="當你要npm-install-hexo-deployer-git-save時吃了Warning"><a href="#當你要npm-install-hexo-deployer-git-save時吃了Warning" class="headerlink" title="當你要npm install hexo-deployer-git --save時吃了Warning"></a>當你要<code>npm install hexo-deployer-git --save</code>時吃了Warning</h2><p>這篇一定可以幫助到你。</p>
+<p><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/682735/">為什麼npminstall的時候會顯示嚴重漏洞</a></p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>2020</tag>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
