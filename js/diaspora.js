@@ -44,7 +44,7 @@ var Diaspora = {
             document.title = state.t;
 
             if (state.u == Home) {
-                $('#preview').css('position', 'static');
+                $('#preview').css('position', 'fixed');
                 setTimeout(function() {
                     $('#preview').removeClass('show');
                     $('#container').show();
